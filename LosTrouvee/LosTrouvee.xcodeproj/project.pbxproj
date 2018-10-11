@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49079881216F7F12000C9BEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49079880216F7F12000C9BEC /* AppDelegate.swift */; };
+		49079883216F7F12000C9BEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49079882216F7F12000C9BEC /* ViewController.swift */; };
+		49079886216F7F12000C9BEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49079884216F7F12000C9BEC /* Main.storyboard */; };
+		49079889216F7F12000C9BEC /* LosTrouvee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49079887216F7F12000C9BEC /* LosTrouvee.xcdatamodeld */; };
+		4907988B216F7F13000C9BEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4907988A216F7F13000C9BEC /* Assets.xcassets */; };
+		4907988E216F7F13000C9BEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4907988C216F7F13000C9BEC /* LaunchScreen.storyboard */; };
+		49079899216F7F14000C9BEC /* LosTrouveeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49079898216F7F14000C9BEC /* LosTrouveeTests.swift */; };
+		490798A4216F7F14000C9BEC /* LosTrouveeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490798A3216F7F14000C9BEC /* LosTrouveeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49079895216F7F14000C9BEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49079875216F7F12000C9BEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4907987C216F7F12000C9BEC;
+			remoteInfo = LosTrouvee;
+		};
+		490798A0216F7F14000C9BEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49079875216F7F12000C9BEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4907987C216F7F12000C9BEC;
+			remoteInfo = LosTrouvee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4907987D216F7F12000C9BEC /* LosTrouvee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LosTrouvee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49079880216F7F12000C9BEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49079882216F7F12000C9BEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49079885216F7F12000C9BEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49079888216F7F12000C9BEC /* LosTrouvee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LosTrouvee.xcdatamodel; sourceTree = "<group>"; };
+		4907988A216F7F13000C9BEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4907988D216F7F13000C9BEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4907988F216F7F13000C9BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49079894216F7F14000C9BEC /* LosTrouveeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LosTrouveeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49079898216F7F14000C9BEC /* LosTrouveeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosTrouveeTests.swift; sourceTree = "<group>"; };
+		4907989A216F7F14000C9BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4907989F216F7F14000C9BEC /* LosTrouveeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LosTrouveeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		490798A3216F7F14000C9BEC /* LosTrouveeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosTrouveeUITests.swift; sourceTree = "<group>"; };
+		490798A5216F7F14000C9BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4907987A216F7F12000C9BEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49079891216F7F13000C9BEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4907989C216F7F14000C9BEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49079874216F7F12000C9BEC = {
+			isa = PBXGroup;
+			children = (
+				4907987F216F7F12000C9BEC /* LosTrouvee */,
+				49079897216F7F14000C9BEC /* LosTrouveeTests */,
+				490798A2216F7F14000C9BEC /* LosTrouveeUITests */,
+				4907987E216F7F12000C9BEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4907987E216F7F12000C9BEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4907987D216F7F12000C9BEC /* LosTrouvee.app */,
+				49079894216F7F14000C9BEC /* LosTrouveeTests.xctest */,
+				4907989F216F7F14000C9BEC /* LosTrouveeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4907987F216F7F12000C9BEC /* LosTrouvee */ = {
+			isa = PBXGroup;
+			children = (
+				49079880216F7F12000C9BEC /* AppDelegate.swift */,
+				49079882216F7F12000C9BEC /* ViewController.swift */,
+				49079884216F7F12000C9BEC /* Main.storyboard */,
+				4907988A216F7F13000C9BEC /* Assets.xcassets */,
+				4907988C216F7F13000C9BEC /* LaunchScreen.storyboard */,
+				4907988F216F7F13000C9BEC /* Info.plist */,
+				49079887216F7F12000C9BEC /* LosTrouvee.xcdatamodeld */,
+			);
+			path = LosTrouvee;
+			sourceTree = "<group>";
+		};
+		49079897216F7F14000C9BEC /* LosTrouveeTests */ = {
+			isa = PBXGroup;
+			children = (
+				49079898216F7F14000C9BEC /* LosTrouveeTests.swift */,
+				4907989A216F7F14000C9BEC /* Info.plist */,
+			);
+			path = LosTrouveeTests;
+			sourceTree = "<group>";
+		};
+		490798A2216F7F14000C9BEC /* LosTrouveeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				490798A3216F7F14000C9BEC /* LosTrouveeUITests.swift */,
+				490798A5216F7F14000C9BEC /* Info.plist */,
+			);
+			path = LosTrouveeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4907987C216F7F12000C9BEC /* LosTrouvee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 490798A8216F7F14000C9BEC /* Build configuration list for PBXNativeTarget "LosTrouvee" */;
+			buildPhases = (
+				49079879216F7F12000C9BEC /* Sources */,
+				4907987A216F7F12000C9BEC /* Frameworks */,
+				4907987B216F7F12000C9BEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LosTrouvee;
+			productName = LosTrouvee;
+			productReference = 4907987D216F7F12000C9BEC /* LosTrouvee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49079893216F7F13000C9BEC /* LosTrouveeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 490798AB216F7F14000C9BEC /* Build configuration list for PBXNativeTarget "LosTrouveeTests" */;
+			buildPhases = (
+				49079890216F7F13000C9BEC /* Sources */,
+				49079891216F7F13000C9BEC /* Frameworks */,
+				49079892216F7F13000C9BEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49079896216F7F14000C9BEC /* PBXTargetDependency */,
+			);
+			name = LosTrouveeTests;
+			productName = LosTrouveeTests;
+			productReference = 49079894216F7F14000C9BEC /* LosTrouveeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4907989E216F7F14000C9BEC /* LosTrouveeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 490798AE216F7F14000C9BEC /* Build configuration list for PBXNativeTarget "LosTrouveeUITests" */;
+			buildPhases = (
+				4907989B216F7F14000C9BEC /* Sources */,
+				4907989C216F7F14000C9BEC /* Frameworks */,
+				4907989D216F7F14000C9BEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				490798A1216F7F14000C9BEC /* PBXTargetDependency */,
+			);
+			name = LosTrouveeUITests;
+			productName = LosTrouveeUITests;
+			productReference = 4907989F216F7F14000C9BEC /* LosTrouveeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49079875216F7F12000C9BEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Jari De Graeve";
+				TargetAttributes = {
+					4907987C216F7F12000C9BEC = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					49079893216F7F13000C9BEC = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 4907987C216F7F12000C9BEC;
+					};
+					4907989E216F7F14000C9BEC = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 4907987C216F7F12000C9BEC;
+					};
+				};
+			};
+			buildConfigurationList = 49079878216F7F12000C9BEC /* Build configuration list for PBXProject "LosTrouvee" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49079874216F7F12000C9BEC;
+			productRefGroup = 4907987E216F7F12000C9BEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4907987C216F7F12000C9BEC /* LosTrouvee */,
+				49079893216F7F13000C9BEC /* LosTrouveeTests */,
+				4907989E216F7F14000C9BEC /* LosTrouveeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4907987B216F7F12000C9BEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4907988E216F7F13000C9BEC /* LaunchScreen.storyboard in Resources */,
+				4907988B216F7F13000C9BEC /* Assets.xcassets in Resources */,
+				49079886216F7F12000C9BEC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49079892216F7F13000C9BEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4907989D216F7F14000C9BEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49079879216F7F12000C9BEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49079883216F7F12000C9BEC /* ViewController.swift in Sources */,
+				49079889216F7F12000C9BEC /* LosTrouvee.xcdatamodeld in Sources */,
+				49079881216F7F12000C9BEC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49079890216F7F13000C9BEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49079899216F7F14000C9BEC /* LosTrouveeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4907989B216F7F14000C9BEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				490798A4216F7F14000C9BEC /* LosTrouveeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49079896216F7F14000C9BEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4907987C216F7F12000C9BEC /* LosTrouvee */;
+			targetProxy = 49079895216F7F14000C9BEC /* PBXContainerItemProxy */;
+		};
+		490798A1216F7F14000C9BEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4907987C216F7F12000C9BEC /* LosTrouvee */;
+			targetProxy = 490798A0216F7F14000C9BEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49079884216F7F12000C9BEC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49079885216F7F12000C9BEC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4907988C216F7F13000C9BEC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4907988D216F7F13000C9BEC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		490798A6216F7F14000C9BEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		490798A7216F7F14000C9BEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		490798A9216F7F14000C9BEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZLV9ZRUCAM;
+				INFOPLIST_FILE = LosTrouvee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exemple.LosTrouvee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		490798AA216F7F14000C9BEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZLV9ZRUCAM;
+				INFOPLIST_FILE = LosTrouvee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exemple.LosTrouvee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		490798AC216F7F14000C9BEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZLV9ZRUCAM;
+				INFOPLIST_FILE = LosTrouveeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exemple.LosTrouveeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LosTrouvee.app/LosTrouvee";
+			};
+			name = Debug;
+		};
+		490798AD216F7F14000C9BEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZLV9ZRUCAM;
+				INFOPLIST_FILE = LosTrouveeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exemple.LosTrouveeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LosTrouvee.app/LosTrouvee";
+			};
+			name = Release;
+		};
+		490798AF216F7F14000C9BEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZLV9ZRUCAM;
+				INFOPLIST_FILE = LosTrouveeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exemple.LosTrouveeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LosTrouvee;
+			};
+			name = Debug;
+		};
+		490798B0216F7F14000C9BEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZLV9ZRUCAM;
+				INFOPLIST_FILE = LosTrouveeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.exemple.LosTrouveeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LosTrouvee;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49079878216F7F12000C9BEC /* Build configuration list for PBXProject "LosTrouvee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				490798A6216F7F14000C9BEC /* Debug */,
+				490798A7216F7F14000C9BEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		490798A8216F7F14000C9BEC /* Build configuration list for PBXNativeTarget "LosTrouvee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				490798A9216F7F14000C9BEC /* Debug */,
+				490798AA216F7F14000C9BEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		490798AB216F7F14000C9BEC /* Build configuration list for PBXNativeTarget "LosTrouveeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				490798AC216F7F14000C9BEC /* Debug */,
+				490798AD216F7F14000C9BEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		490798AE216F7F14000C9BEC /* Build configuration list for PBXNativeTarget "LosTrouveeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				490798AF216F7F14000C9BEC /* Debug */,
+				490798B0216F7F14000C9BEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		49079887216F7F12000C9BEC /* LosTrouvee.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49079888216F7F12000C9BEC /* LosTrouvee.xcdatamodel */,
+			);
+			currentVersion = 49079888216F7F12000C9BEC /* LosTrouvee.xcdatamodel */;
+			path = LosTrouvee.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 49079875216F7F12000C9BEC /* Project object */;
+}
