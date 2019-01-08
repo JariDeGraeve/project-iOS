@@ -1,0 +1,6 @@
+framework module Pods_LosTrouvee {
+  umbrella header "Pods-LosTrouvee-umbrella.h"
+
+  export *
+  module * { export * }
+}

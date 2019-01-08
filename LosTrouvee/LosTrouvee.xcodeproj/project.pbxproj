@@ -8,13 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		49079881216F7F12000C9BEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49079880216F7F12000C9BEC /* AppDelegate.swift */; };
-		49079883216F7F12000C9BEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49079882216F7F12000C9BEC /* ViewController.swift */; };
 		49079886216F7F12000C9BEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49079884216F7F12000C9BEC /* Main.storyboard */; };
 		49079889216F7F12000C9BEC /* LosTrouvee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49079887216F7F12000C9BEC /* LosTrouvee.xcdatamodeld */; };
 		4907988B216F7F13000C9BEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4907988A216F7F13000C9BEC /* Assets.xcassets */; };
 		4907988E216F7F13000C9BEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4907988C216F7F13000C9BEC /* LaunchScreen.storyboard */; };
 		49079899216F7F14000C9BEC /* LosTrouveeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49079898216F7F14000C9BEC /* LosTrouveeTests.swift */; };
 		490798A4216F7F14000C9BEC /* LosTrouveeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490798A3216F7F14000C9BEC /* LosTrouveeUITests.swift */; };
+		4918CEE321D3CAD9005E0303 /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918CEE221D3CAD9005E0303 /* AddItemTableViewController.swift */; };
+		4918CEE521D3E79C005E0303 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918CEE421D3E79C005E0303 /* StringExtension.swift */; };
+		4948091221DD3FE3008DB623 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948091121DD3FE3008DB623 /* LoginTableViewController.swift */; };
+		4948091421DD3FEC008DB623 /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948091321DD3FEC008DB623 /* RegisterTableViewController.swift */; };
+		4948091621DD40E1008DB623 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948091521DD40E1008DB623 /* ViewControllerExtension.swift */; };
+		49638A3B21AEDACB00CBC6C2 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49638A3A21AEDACB00CBC6C2 /* ItemsTableViewController.swift */; };
+		49638A3E21AEDB8C00CBC6C2 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49638A3D21AEDB8C00CBC6C2 /* ItemTableViewCell.swift */; };
+		49D4114E219DE637008804F5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4114D219DE637008804F5 /* Item.swift */; };
+		49D41153219DE94E008804F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D41152219DE94E008804F5 /* User.swift */; };
+		49D41155219DEA7E008804F5 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D41154219DEA7E008804F5 /* DummyData.swift */; };
+		84BA1C3216EA6FE824D04C46 /* Pods_LosTrouvee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052BB08F4AE2AAEB753FD85E /* Pods_LosTrouvee.framework */; };
+		8561451388DE9FA3E0398FE4 /* Pods_LosTrouveeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93DA0CBC8EBDC48048AFF26D /* Pods_LosTrouveeTests.framework */; };
+		CD55C18096749EB7434CD6E9 /* Pods_LosTrouveeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE822E8A6E46F88ABD50F3F6 /* Pods_LosTrouveeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006512FE1F5E0B7D48E1A6DE /* Pods-LosTrouvee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LosTrouvee.release.xcconfig"; path = "Pods/Target Support Files/Pods-LosTrouvee/Pods-LosTrouvee.release.xcconfig"; sourceTree = "<group>"; };
+		052BB08F4AE2AAEB753FD85E /* Pods_LosTrouvee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LosTrouvee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17FCC58AB8CD1D1957726063 /* Pods-LosTrouvee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LosTrouvee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LosTrouvee/Pods-LosTrouvee.debug.xcconfig"; sourceTree = "<group>"; };
+		2F9EA35DF7CE407D4F673BC3 /* Pods-LosTrouveeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LosTrouveeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LosTrouveeTests/Pods-LosTrouveeTests.release.xcconfig"; sourceTree = "<group>"; };
+		40E86BB807AC6D70288DE3C5 /* Pods-LosTrouveeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LosTrouveeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LosTrouveeUITests/Pods-LosTrouveeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4907987D216F7F12000C9BEC /* LosTrouvee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LosTrouvee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49079880216F7F12000C9BEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49079882216F7F12000C9BEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49079885216F7F12000C9BEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49079888216F7F12000C9BEC /* LosTrouvee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LosTrouvee.xcdatamodel; sourceTree = "<group>"; };
 		4907988A216F7F13000C9BEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +65,20 @@
 		4907989F216F7F14000C9BEC /* LosTrouveeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LosTrouveeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		490798A3216F7F14000C9BEC /* LosTrouveeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosTrouveeUITests.swift; sourceTree = "<group>"; };
 		490798A5216F7F14000C9BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4918CEE221D3CAD9005E0303 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
+		4918CEE421D3E79C005E0303 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		4948091121DD3FE3008DB623 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		4948091321DD3FEC008DB623 /* RegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
+		4948091521DD40E1008DB623 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		49638A3A21AEDACB00CBC6C2 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemsTableViewController.swift; path = "/Users/jari/Documents/School/Native Apps II - iOS/project-iOS/LosTrouvee/LosTrouvee/ItemsTableViewController.swift"; sourceTree = "<absolute>"; };
+		49638A3D21AEDB8C00CBC6C2 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		49D4114D219DE637008804F5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		49D41152219DE94E008804F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		49D41154219DEA7E008804F5 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		93DA0CBC8EBDC48048AFF26D /* Pods_LosTrouveeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LosTrouveeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC0213812E5498682EE4E8E2 /* Pods-LosTrouveeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LosTrouveeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LosTrouveeTests/Pods-LosTrouveeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE822E8A6E46F88ABD50F3F6 /* Pods_LosTrouveeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LosTrouveeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F3BCA6D2CDE7A1F3CF30DF /* Pods-LosTrouveeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LosTrouveeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LosTrouveeUITests/Pods-LosTrouveeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BA1C3216EA6FE824D04C46 /* Pods_LosTrouvee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8561451388DE9FA3E0398FE4 /* Pods_LosTrouveeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD55C18096749EB7434CD6E9 /* Pods_LosTrouveeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +116,8 @@
 				49079897216F7F14000C9BEC /* LosTrouveeTests */,
 				490798A2216F7F14000C9BEC /* LosTrouveeUITests */,
 				4907987E216F7F12000C9BEC /* Products */,
+				9CED05768B3497DB15498A37 /* Pods */,
+				EB3CAD3FC99F1C3F31C9CD87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +134,9 @@
 		4907987F216F7F12000C9BEC /* LosTrouvee */ = {
 			isa = PBXGroup;
 			children = (
+				49638A3C21AEDAD700CBC6C2 /* ViewControllers */,
+				49D4114F219DE641008804F5 /* Model */,
 				49079880216F7F12000C9BEC /* AppDelegate.swift */,
-				49079882216F7F12000C9BEC /* ViewController.swift */,
 				49079884216F7F12000C9BEC /* Main.storyboard */,
 				4907988A216F7F13000C9BEC /* Assets.xcassets */,
 				4907988C216F7F13000C9BEC /* LaunchScreen.storyboard */,
@@ -128,6 +164,53 @@
 			path = LosTrouveeUITests;
 			sourceTree = "<group>";
 		};
+		49638A3C21AEDAD700CBC6C2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				49638A3A21AEDACB00CBC6C2 /* ItemsTableViewController.swift */,
+				49638A3D21AEDB8C00CBC6C2 /* ItemTableViewCell.swift */,
+				4918CEE221D3CAD9005E0303 /* AddItemTableViewController.swift */,
+				4948091121DD3FE3008DB623 /* LoginTableViewController.swift */,
+				4948091321DD3FEC008DB623 /* RegisterTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		49D4114F219DE641008804F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49D41154219DEA7E008804F5 /* DummyData.swift */,
+				49D4114D219DE637008804F5 /* Item.swift */,
+				49D41152219DE94E008804F5 /* User.swift */,
+				4918CEE421D3E79C005E0303 /* StringExtension.swift */,
+				4948091521DD40E1008DB623 /* ViewControllerExtension.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CED05768B3497DB15498A37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17FCC58AB8CD1D1957726063 /* Pods-LosTrouvee.debug.xcconfig */,
+				006512FE1F5E0B7D48E1A6DE /* Pods-LosTrouvee.release.xcconfig */,
+				AC0213812E5498682EE4E8E2 /* Pods-LosTrouveeTests.debug.xcconfig */,
+				2F9EA35DF7CE407D4F673BC3 /* Pods-LosTrouveeTests.release.xcconfig */,
+				40E86BB807AC6D70288DE3C5 /* Pods-LosTrouveeUITests.debug.xcconfig */,
+				F4F3BCA6D2CDE7A1F3CF30DF /* Pods-LosTrouveeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EB3CAD3FC99F1C3F31C9CD87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				052BB08F4AE2AAEB753FD85E /* Pods_LosTrouvee.framework */,
+				93DA0CBC8EBDC48048AFF26D /* Pods_LosTrouveeTests.framework */,
+				EE822E8A6E46F88ABD50F3F6 /* Pods_LosTrouveeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 490798A8216F7F14000C9BEC /* Build configuration list for PBXNativeTarget "LosTrouvee" */;
 			buildPhases = (
+				B8CAF5260EDCADB89EDA2725 /* [CP] Check Pods Manifest.lock */,
 				49079879216F7F12000C9BEC /* Sources */,
 				4907987A216F7F12000C9BEC /* Frameworks */,
 				4907987B216F7F12000C9BEC /* Resources */,
+				CEC8AA4B3322503164182307 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 490798AB216F7F14000C9BEC /* Build configuration list for PBXNativeTarget "LosTrouveeTests" */;
 			buildPhases = (
+				2F0BBD89E0A4586C90DB316E /* [CP] Check Pods Manifest.lock */,
 				49079890216F7F13000C9BEC /* Sources */,
 				49079891216F7F13000C9BEC /* Frameworks */,
 				49079892216F7F13000C9BEC /* Resources */,
@@ -170,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 490798AE216F7F14000C9BEC /* Build configuration list for PBXNativeTarget "LosTrouveeUITests" */;
 			buildPhases = (
+				744DE0BFBC7FE8BE2DFCB592 /* [CP] Check Pods Manifest.lock */,
 				4907989B216F7F14000C9BEC /* Sources */,
 				4907989C216F7F14000C9BEC /* Frameworks */,
 				4907989D216F7F14000C9BEC /* Resources */,
@@ -254,14 +341,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F0BBD89E0A4586C90DB316E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LosTrouveeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		744DE0BFBC7FE8BE2DFCB592 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LosTrouveeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8CAF5260EDCADB89EDA2725 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LosTrouvee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEC8AA4B3322503164182307 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LosTrouvee/Pods-LosTrouvee-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LosTrouvee/Pods-LosTrouvee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49079879216F7F12000C9BEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49079883216F7F12000C9BEC /* ViewController.swift in Sources */,
 				49079889216F7F12000C9BEC /* LosTrouvee.xcdatamodeld in Sources */,
+				49D4114E219DE637008804F5 /* Item.swift in Sources */,
+				49638A3B21AEDACB00CBC6C2 /* ItemsTableViewController.swift in Sources */,
 				49079881216F7F12000C9BEC /* AppDelegate.swift in Sources */,
+				4918CEE321D3CAD9005E0303 /* AddItemTableViewController.swift in Sources */,
+				4948091221DD3FE3008DB623 /* LoginTableViewController.swift in Sources */,
+				4918CEE521D3E79C005E0303 /* StringExtension.swift in Sources */,
+				49D41155219DEA7E008804F5 /* DummyData.swift in Sources */,
+				4948091621DD40E1008DB623 /* ViewControllerExtension.swift in Sources */,
+				49638A3E21AEDB8C00CBC6C2 /* ItemTableViewCell.swift in Sources */,
+				49D41153219DE94E008804F5 /* User.swift in Sources */,
+				4948091421DD3FEC008DB623 /* RegisterTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +623,7 @@
 		};
 		490798A9216F7F14000C9BEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17FCC58AB8CD1D1957726063 /* Pods-LosTrouvee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +642,7 @@
 		};
 		490798AA216F7F14000C9BEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 006512FE1F5E0B7D48E1A6DE /* Pods-LosTrouvee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +661,7 @@
 		};
 		490798AC216F7F14000C9BEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC0213812E5498682EE4E8E2 /* Pods-LosTrouveeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +683,7 @@
 		};
 		490798AD216F7F14000C9BEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F9EA35DF7CE407D4F673BC3 /* Pods-LosTrouveeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +705,7 @@
 		};
 		490798AF216F7F14000C9BEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40E86BB807AC6D70288DE3C5 /* Pods-LosTrouveeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +726,7 @@
 		};
 		490798B0216F7F14000C9BEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F3BCA6D2CDE7A1F3CF30DF /* Pods-LosTrouveeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
