@@ -7,6 +7,8 @@ target 'LosTrouvee' do
 
   # Pods for LosTrouvee
 pod 'RealmSwift'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
   target 'LosTrouveeTests' do
     inherit! :search_paths
     # Pods for testing

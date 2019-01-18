@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterTableViewController: UITableViewController {
     
@@ -20,23 +21,40 @@ class RegisterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateSubmitButtonState()
         hideKeyboardWhenTappedAround()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RegisterToLogin" {
-//            if(segue.destination as! UINavigationController).viewControllers.count > 1 {
-//                self.dismiss(animated: false, completion: nil)
-//            }
+            //            if(segue.destination as! UINavigationController).viewControllers.count > 1 {
+            //                self.dismiss(animated: false, completion: nil)
+            //            }
             ((segue.destination as! UINavigationController).viewControllers[0] as! LoginTableViewController).navFromLostList = navFromLostList
         }else{
             (segue.destination as! ItemsTableViewController).isLostList = navFromLostList
-            guard segue.identifier == "SubmitRegisterSegue" else {return}
-            //register with firebase
         }
+    }
+    
+    @IBAction func signUpAction(_ sender: Any) {
         
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
+                if error == nil {
+                    self.performSegue(withIdentifier: "SubmitRegisterSegue", sender: self)
+                }
+                else{
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
         
+    }
+    
+    @IBAction func textEditingChanged(_ sender: Any) {
+        updateSubmitButtonState()
     }
     
     private func updateSubmitButtonState(){

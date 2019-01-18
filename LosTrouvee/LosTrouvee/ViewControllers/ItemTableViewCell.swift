@@ -33,11 +33,11 @@ class ItemTableViewCell: UITableViewCell {
         titleLabel.text = item.title
         dateAddedLabel.text = df.string(from: item.timeAdded)
         categoryLabel.text = item.category.rawValue.uppercased()
-        descriptionLabel.text = item.description
+        descriptionLabel.text = item.itemDescription
         df = Item.timeStampDateFormatter
         timestampLabel.text = df.string(from: item.timestamp)
         //apparte functie maken om place te formatten
-        placeLabel.text =  item.place.city
+        placeLabel.text =  item.place!.city
         
     }
 

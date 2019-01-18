@@ -7,24 +7,34 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Item {
+class Item : Object {
     //var id: Int
-    let title: String
-    let description: String
-    let found: Bool
-    let category: Category
-    let place: Place
-    let contact: Contact
-    let timestamp: Date //time when lost or found
-    let userEmail: String
-    let timeAdded: Date//time when lost or found item was posted
+    @objc dynamic var title: String = ""
+    @objc dynamic var itemDescription: String = ""
+    @objc dynamic var found: Bool = true
+    @objc dynamic var categoryRaw: String = ""
+    @objc dynamic var place: Place? = nil
+    @objc dynamic var contact: Contact? = nil
+    @objc dynamic var timestamp: Date = Date() //time when lost or found
+    @objc dynamic var userEmail: String = ""
+    @objc dynamic var timeAdded: Date = Date() //time when lost or found item was posted
+    
+    var category: Category {
+        get {
+            return Category(rawValue: categoryRaw) ?? .other
+        } set {
+            categoryRaw = newValue.rawValue
+        }
+    }
     
     //var user: User
     //var image: Image //not sure
-    init(title:String, description: String, found: Bool, category: Category, place: Place, contact: Contact, timestamp: Date,userEmail:String, timeAdded: Date = Date()) {
+    convenience init(title:String, itemDescription: String, found: Bool, category: Category, place: Place, contact: Contact, timestamp: Date,userEmail:String, timeAdded: Date = Date()) {
+        self.init()
         self.title = title
-        self.description = description
+        self.itemDescription = itemDescription
         self.found = found
         self.category = category
         self.place = place
@@ -51,15 +61,16 @@ struct Item {
     }()
 }
 
-struct Place {
+class Place : Object{
     //var id: Int
-    let postalCode: String
-    let city: String
-    let street: String
-    let nr: String
-    let placeName: String
+    @objc dynamic var postalCode: String = ""
+    @objc dynamic var city: String = ""
+    @objc dynamic var street: String = ""
+    @objc dynamic var nr: String = ""
+    @objc dynamic var placeName: String = ""
     
-    init(postalCode:String, city: String, street: String, nr: String = "", name: String = "") {
+    convenience init(postalCode:String, city: String, street: String, nr: String = "", name: String = "") {
+        self.init()
         self.postalCode = postalCode
         self.city = city
         self.street = street
@@ -68,15 +79,16 @@ struct Place {
     }
 }
 
-struct Contact {
+class Contact : Object{
     //var id: Int
-    let firstname: String
-    let lastname: String
-    let email: String
-    let tel: String
-    let mobile: String
+    @objc dynamic var firstname: String = ""
+    @objc dynamic var lastname: String = ""
+    @objc dynamic var email: String = ""
+    @objc dynamic var tel: String = ""
+    @objc dynamic var mobile: String = ""
     
-    init(firstname: String, lastname: String, email: String, tel: String = "", mobile: String = "") {
+    convenience init(firstname: String, lastname: String, email: String, tel: String = "", mobile: String = "") {
+        self.init()
         self.firstname = firstname
         self.lastname = lastname
         self.email = email

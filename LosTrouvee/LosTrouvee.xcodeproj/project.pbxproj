@@ -21,6 +21,7 @@
 		4948091621DD40E1008DB623 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948091521DD40E1008DB623 /* ViewControllerExtension.swift */; };
 		49638A3B21AEDACB00CBC6C2 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49638A3A21AEDACB00CBC6C2 /* ItemsTableViewController.swift */; };
 		49638A3E21AEDB8C00CBC6C2 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49638A3D21AEDB8C00CBC6C2 /* ItemTableViewCell.swift */; };
+		49D3E73721F0C24100F187A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49D3E73621F0C24100F187A5 /* GoogleService-Info.plist */; };
 		49D4114E219DE637008804F5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4114D219DE637008804F5 /* Item.swift */; };
 		49D41153219DE94E008804F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D41152219DE94E008804F5 /* User.swift */; };
 		49D41155219DEA7E008804F5 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D41154219DEA7E008804F5 /* DummyData.swift */; };
@@ -72,6 +73,7 @@
 		4948091521DD40E1008DB623 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		49638A3A21AEDACB00CBC6C2 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemsTableViewController.swift; path = "/Users/jari/Documents/School/Native Apps II - iOS/project-iOS/LosTrouvee/LosTrouvee/ItemsTableViewController.swift"; sourceTree = "<absolute>"; };
 		49638A3D21AEDB8C00CBC6C2 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		49D3E73621F0C24100F187A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49D4114D219DE637008804F5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		49D41152219DE94E008804F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		49D41154219DEA7E008804F5 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				4907988A216F7F13000C9BEC /* Assets.xcassets */,
 				4907988C216F7F13000C9BEC /* LaunchScreen.storyboard */,
 				4907988F216F7F13000C9BEC /* Info.plist */,
+				49D3E73621F0C24100F187A5 /* GoogleService-Info.plist */,
 				49079887216F7F12000C9BEC /* LosTrouvee.xcdatamodeld */,
 			);
 			path = LosTrouvee;
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4907988E216F7F13000C9BEC /* LaunchScreen.storyboard in Resources */,
+				49D3E73721F0C24100F187A5 /* GoogleService-Info.plist in Resources */,
 				4907988B216F7F13000C9BEC /* Assets.xcassets in Resources */,
 				49079886216F7F12000C9BEC /* Main.storyboard in Resources */,
 			);
@@ -417,15 +421,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LosTrouvee/Pods-LosTrouvee-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -86,7 +86,7 @@ UITextViewDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as! ItemsTableViewController).isLostList = isLostItem
+        (segue.destination as! ItemsTableViewController).isLostList = true
         guard segue.identifier == "saveUnwind" else {return}
         
         let title = titleTextField.text!
@@ -106,7 +106,7 @@ UITextViewDelegate{
         
         let place = Place(postalCode: postal, city: city, street: street, nr: nr, name: placeName)
         let contact = Contact(firstname: firstname, lastname: lastname, email: email, tel: tel, mobile: mobile)
-        newItem = Item(title: title, description: description, found: !isLostItem, category: category, place: place, contact: contact, timestamp: timestamp, userEmail: "degraevejari@live.be")
+        newItem = Item(title: title, itemDescription: description, found: !isLostItem, category: category, place: place, contact: contact, timestamp: timestamp, userEmail: "degraevejari@live.be")
     }
     
     private func updateDateSelected(date: Date){

@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import RealmSwift
+import FirebaseAuth
 
 class ItemsTableViewController: UITableViewController {
     
+    @IBOutlet var logoutButton: UIBarButtonItem!
+    @IBOutlet var loginButton: UIBarButtonItem!
+    @IBOutlet var registerButton: UIBarButtonItem!
+    @IBOutlet var addButton: UIBarButtonItem!
+    
     var items = [Item]()
+    //var items: Results<Item>!
     var isLostList : Bool = true
     
     
@@ -21,7 +29,7 @@ class ItemsTableViewController: UITableViewController {
         }else{
             isLostList = false
         }
-        items = DummyData.getDummyItems().filter{
+        items = Array(try! Realm().objects(Item.self)).filter{
             (value:Item) -> Bool in
             if isLostList{
                 return !value.found
@@ -29,7 +37,44 @@ class ItemsTableViewController: UITableViewController {
                 return value.found
             }
         }
-        print(tabBarController?.selectedIndex)
+        
+        //show login and register buttons if no user is logged in
+        //show logout and and buttons if user is logged in
+        updateBarButtons()
+        
+        
+        /*items = DummyData.getDummyItems().filter{
+         (value:Item) -> Bool in
+         if isLostList{
+         return !value.found
+         }else{
+         return value.found
+         }
+         }*/
+    }
+    @IBAction func logoutAction(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        }
+        catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initial = storyboard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = initial
+     
+    }
+    
+    func updateBarButtons(){
+        if(Auth.auth().currentUser == nil){
+            self.navigationItem.leftBarButtonItems = [self.loginButton, self.registerButton]
+            self.navigationItem.rightBarButtonItems = nil
+        }else {
+            self.navigationItem.leftBarButtonItems = [self.logoutButton]
+            self.navigationItem.rightBarButtonItems = [self.addButton]
+            print((Auth.auth().currentUser?.email)!)
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,6 +105,7 @@ class ItemsTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToItemList(segue : UIStoryboardSegue){
+        updateBarButtons()
         if segue.identifier == "saveUnwind"{
             
             let addItemVC = segue.source as! AddItemTableViewController
@@ -67,19 +113,25 @@ class ItemsTableViewController: UITableViewController {
             if let item = addItemVC.newItem {
                 let newIndexPath = IndexPath(row: items.count, section: 0)
                 items.append(item)
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.add(item)
+                }
+                
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
+                
             }
         }
         
         //programatically change tab showed
-//        var tab = tabBarController?.viewControllers
-//        if isLostList {
-//            tabBarController!.selectedIndex = 0
-//            //tabBarController?.tabBar.selectedItem = tabBarController?.tabBar.items?[0]
-//        }else{
-//            tabBarController!.tabBarItem = tabBarController!.tabBar.items?[1]
-//            //tabBarController?.tabBar.selectedItem = tabBarController?.tabBar.items?[1]
-//        }
+        //        var tab = tabBarController?.viewControllers
+        //        if isLostList {
+        //            tabBarController!.selectedIndex = 0
+        //            //tabBarController?.tabBar.selectedItem = tabBarController?.tabBar.items?[0]
+        //        }else{
+        //            tabBarController!.tabBarItem = tabBarController!.tabBar.items?[1]
+        //            //tabBarController?.tabBar.selectedItem = tabBarController?.tabBar.items?[1]
+        //        }
         
     }
     
