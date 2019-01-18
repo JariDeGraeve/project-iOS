@@ -127,7 +127,7 @@ class ItemsTableViewController: UITableViewController {
                     items[selectedIndexPath.row] = item
                     tableView.reloadRows(at: [selectedIndexPath], with: .none)
                     
-                }else{
+                } else {
                     //added item
                     let newIndexPath = IndexPath(row: items.count, section: 0)
                     items.append(item)
