@@ -40,7 +40,11 @@ class RegisterTableViewController: UITableViewController {
         
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
                 if error == nil {
-                    self.performSegue(withIdentifier: "SubmitRegisterSegue", sender: self)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let initial = storyboard.instantiateInitialViewController()
+                    UIApplication.shared.keyWindow?.rootViewController = initial
+                    self.dismissKeyboard()
+                    //self.performSegue(withIdentifier: "SubmitRegisterSegue", sender: self)
                 }
                 else{
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)

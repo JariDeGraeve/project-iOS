@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ItemTableViewCell: UITableViewCell {
 
@@ -37,8 +38,19 @@ class ItemTableViewCell: UITableViewCell {
         df = Item.timeStampDateFormatter
         timestampLabel.text = df.string(from: item.timestamp)
         //apparte functie maken om place te formatten
-        placeLabel.text =  item.place!.city
+        placeLabel.text =  formatPlace(item.place!)
         
+    }
+    
+    private func formatPlace(_ place: Place) -> String{
+        var placeString = ""
+        if (!place.placeName.isEmpty){
+            placeString += place.placeName
+        }else{
+            placeString += place.street + " " + place.nr
+        }
+        placeString += " " + place.city
+        return placeString
     }
 
 }

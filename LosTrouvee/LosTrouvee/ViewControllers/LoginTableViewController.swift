@@ -39,7 +39,12 @@ class LoginTableViewController: UITableViewController {
         
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error == nil{
-                self.performSegue(withIdentifier: "SubmitLoginSegue", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let initial = storyboard.instantiateInitialViewController()
+                UIApplication.shared.keyWindow?.rootViewController = initial
+                self.dismissKeyboard()
+
+                //self.performSegue(withIdentifier: "SubmitLoginSegue", sender: self)
             }
             else{
                 let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -49,6 +54,7 @@ class LoginTableViewController: UITableViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
+        
         
     }
 

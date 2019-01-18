@@ -37,20 +37,8 @@ class ItemsTableViewController: UITableViewController {
                 return value.found
             }
         }
-        
-        //show login and register buttons if no user is logged in
-        //show logout and and buttons if user is logged in
         updateBarButtons()
-        
-        
-        /*items = DummyData.getDummyItems().filter{
-         (value:Item) -> Bool in
-         if isLostList{
-         return !value.found
-         }else{
-         return value.found
-         }
-         }*/
+      
     }
     @IBAction func logoutAction(_ sender: Any) {
         do {
@@ -104,34 +92,70 @@ class ItemsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        let user = Auth.auth().currentUser
+        return user != nil && user!.email! == items[indexPath.row].userEmail
+           
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let realm = try! Realm()
+            try! realm.write {
+                realm.delete(items[indexPath.row])
+            }
+            items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     @IBAction func unwindToItemList(segue : UIStoryboardSegue){
         updateBarButtons()
         if segue.identifier == "saveUnwind"{
             
             let addItemVC = segue.source as! AddItemTableViewController
             
-            if let item = addItemVC.newItem {
-                let newIndexPath = IndexPath(row: items.count, section: 0)
-                items.append(item)
+            if let item = addItemVC.item {
                 let realm = try! Realm()
-                try! realm.write {
-                    realm.add(item)
+                
+                if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                    //updated item
+                    try! realm.write {
+                        realm.delete(items[selectedIndexPath.row])
+                        realm.add(item)
+                    }
+                    items[selectedIndexPath.row] = item
+                    tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                    
+                }else{
+                    //added item
+                    let newIndexPath = IndexPath(row: items.count, section: 0)
+                    items.append(item)
+                    try! realm.write {
+                        realm.add(item)
+                    }
+                    if isLostList && !item.found {
+                        tableView.insertRows(at: [newIndexPath], with: .automatic)
+                    }else{
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let initial = storyboard.instantiateInitialViewController()
+                        UIApplication.shared.keyWindow?.rootViewController = initial
+                    }
                 }
+            }
+        }else if segue.identifier == "foundUnwind"{
+            let addItemVC = segue.source as! AddItemTableViewController
+            if let item = addItemVC.item {
+                let realm = try! Realm()
                 
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
-                
+                try! realm.write {
+                    realm.delete(item)
+                }
+                let selectedIndexPath = tableView.indexPathForSelectedRow!
+                items.remove(at: selectedIndexPath.row)
+                tableView.deleteRows(at: [selectedIndexPath], with: .none)
             }
         }
-        
-        //programatically change tab showed
-        //        var tab = tabBarController?.viewControllers
-        //        if isLostList {
-        //            tabBarController!.selectedIndex = 0
-        //            //tabBarController?.tabBar.selectedItem = tabBarController?.tabBar.items?[0]
-        //        }else{
-        //            tabBarController!.tabBarItem = tabBarController!.tabBar.items?[1]
-        //            //tabBarController?.tabBar.selectedItem = tabBarController?.tabBar.items?[1]
-        //        }
         
     }
     
@@ -139,16 +163,27 @@ class ItemsTableViewController: UITableViewController {
         switch segue.identifier {
         case "LostListToAdd":
             ((segue.destination as! UINavigationController).viewControllers[0] as! AddItemTableViewController).isLostItem = true
+            break
         case "LostListToLogin":
             ((segue.destination as! UINavigationController).viewControllers[0] as! LoginTableViewController).navFromLostList = true
+            break
         case "LostListToRegister":
             ((segue.destination as! UINavigationController).viewControllers[0] as! RegisterTableViewController).navFromLostList = true
+            break
         case "FoundListToAdd":
             ((segue.destination as! UINavigationController).viewControllers[0] as! AddItemTableViewController).isLostItem = false
+            break
         case "FoundListToLogin":
             ((segue.destination as! UINavigationController).viewControllers[0] as! LoginTableViewController).navFromLostList = false
+            break
         case "FoundListToRegister":
             ((segue.destination as! UINavigationController).viewControllers[0] as! RegisterTableViewController).navFromLostList = false
+            break
+        case "ListToDetails":
+            let selectedItem = items[tableView.indexPathForSelectedRow!.row]
+            (segue.destination as! AddItemTableViewController).item = selectedItem
+            (segue.destination as! AddItemTableViewController).isLostItem = !selectedItem.found
+            break
         default:
             return
         }

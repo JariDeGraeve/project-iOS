@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AddItemTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource,
 UITextViewDelegate{
@@ -16,7 +17,7 @@ UITextViewDelegate{
     var isCategoryPickerHidden = true
     var isDatePickerHidden = true
     
-    var newItem: Item?
+    var item: Item?
     
     @IBOutlet weak var titleTextField: UITextField!
     
@@ -42,20 +43,13 @@ UITextViewDelegate{
     @IBOutlet weak var contactTelTextField: UITextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var foundButton: UIBarButtonItem!
+    
+    var editingEnabled = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if isLostItem {
-            navigationItem.title = "New lost item"
-            dateLabel.text = "Lost on"
-        } else {
-            navigationItem.title = "New found item"
-            dateLabel.text = "Found on"
-        }
-        datePicker.maximumDate = Date()
-        
-        updateDateSelected(date: datePicker.date)
         
         for cat in Category.allCases {
             if cat.rawValue != "other"{
@@ -71,7 +65,50 @@ UITextViewDelegate{
         
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
-        categoryPicker.selectRow(0, inComponent: 0, animated: false)
+        
+        if let item = item {
+            //details item
+            
+            let user = Auth.auth().currentUser
+            if user != nil && user!.email! == item.userEmail {
+                //correct user => show save button and enable editing
+                self.navigationItem.rightBarButtonItems = [saveButton,foundButton]
+                enableEditing(true)
+                
+            } else {
+                //if incorrect user => hide save button and disable editing
+                self.navigationItem.rightBarButtonItems = nil
+                enableEditing(false)
+                fillOrHideEmptyFields(for: item)
+            }
+            
+            updateInputFields(with: item)
+            
+        } else {
+            //new item
+            editingEnabled = true
+            self.navigationItem.rightBarButtonItems = [saveButton]
+            if isLostItem {
+                navigationItem.title = "New lost item"
+            } else {
+                navigationItem.title = "New found item"
+            }
+            
+            categoryPicker.selectRow(0, inComponent: 0, animated: false)
+            
+            if let user = Auth.auth().currentUser {
+                contactEmailTextField.text = user.email
+            }
+            
+        }
+        
+        if isLostItem {
+            dateLabel.text = "Lost on"
+        } else {
+            dateLabel.text = "Found on"
+        }
+        datePicker.maximumDate = Date()
+        updateDateSelected(date: datePicker.date)
         
         updateSaveButtonState()
         hideKeyboardWhenTappedAround()
@@ -86,8 +123,11 @@ UITextViewDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as! ItemsTableViewController).isLostList = true
+        (segue.destination as! ItemsTableViewController).isLostList = isLostItem
         guard segue.identifier == "saveUnwind" else {return}
+        if item == nil {
+            (segue.destination as! ItemsTableViewController).isLostList = true
+        }
         
         let title = titleTextField.text!
         let category = Category.init(rawValue: categorySelectedLabel.text!.lowercased())!
@@ -104,9 +144,66 @@ UITextViewDelegate{
         let tel = contactTelTextField.text!
         let mobile = contactMobileTextField.text!
         
+        let userEmail = Auth.auth().currentUser!.email!
+        
         let place = Place(postalCode: postal, city: city, street: street, nr: nr, name: placeName)
         let contact = Contact(firstname: firstname, lastname: lastname, email: email, tel: tel, mobile: mobile)
-        newItem = Item(title: title, itemDescription: description, found: !isLostItem, category: category, place: place, contact: contact, timestamp: timestamp, userEmail: "degraevejari@live.be")
+        item = Item(title: title, itemDescription: description, found: !isLostItem, category: category, place: place, contact: contact, timestamp: timestamp, userEmail: userEmail)
+    }
+    
+    private func fillOrHideEmptyFields(for item: Item){
+        if(item.place!.placeName.isEmpty){
+            placeNameTextField.placeholder = "No name available"
+        }
+        if(item.place!.nr.isEmpty){
+            placeNrTextField.isHidden = true
+        }
+        if(item.contact!.mobile.isEmpty && item.contact!.tel.isEmpty){
+            contactMobileTextField.placeholder = "No mobile number"
+            contactTelTextField.placeholder = "No telephone number"
+        }else if(item.contact!.mobile.isEmpty){
+            contactMobileTextField.isHidden = true
+        }else if(item.contact!.tel.isEmpty){
+            contactTelTextField.isHidden = true
+        }
+    }
+    
+    private func enableEditing(_ enabled: Bool){
+        editingEnabled = enabled
+        titleTextField.isEnabled = enabled
+        categoryPicker.isHidden = !enabled
+        datePicker.isHidden = !enabled
+        descriptionTextView.isEditable = enabled
+        placeNameTextField.isEnabled = enabled
+        placeNrTextField.isEnabled = enabled
+        placeStreetTextField.isEnabled = enabled
+        placePostalTextField.isEnabled = enabled
+        placeCityTextField.isEnabled = enabled
+        contactMobileTextField.isEnabled = enabled
+        contactTelTextField.isEnabled = enabled
+        contactEmailTextField.isEnabled = enabled
+        contactFirstameTextField.isEnabled = enabled
+        contactLastnameTextField.isEnabled = enabled
+    }
+    private func updateInputFields(with item: Item){
+        let category = item.categoryRaw[0].uppercased() + item.categoryRaw.substring(fromIndex: 1)
+        
+        navigationItem.title = item.title
+        titleTextField.text = item.title
+        categorySelectedLabel.text = category
+        categoryPicker.selectRow(categories.firstIndex(of: category)!, inComponent: 0, animated: false)
+        datePicker.date = item.timestamp
+        descriptionTextView.text = item.itemDescription
+        placeNameTextField.text = item.place!.placeName
+        placeStreetTextField.text = item.place!.street
+        placeNrTextField.text = item.place!.nr
+        placePostalTextField.text = item.place!.postalCode
+        placeCityTextField.text = item.place!.city
+        contactFirstameTextField.text = item.contact!.firstname
+        contactLastnameTextField.text = item.contact!.lastname
+        contactEmailTextField.text = item.contact!.email
+        contactTelTextField.text = item.contact!.tel
+        contactMobileTextField.text = item.contact!.mobile
     }
     
     private func updateDateSelected(date: Date){
@@ -114,7 +211,10 @@ UITextViewDelegate{
     }
     
     private func updateSaveButtonState(){
-        saveButton.isEnabled = validateInput()
+        // controle op currentUser is puur een extra laag veiligheid
+        if saveButton != nil {
+            saveButton.isEnabled = validateInput() && Auth.auth().currentUser != nil
+        }
     }
     
     private func validateInput() -> Bool{
@@ -169,7 +269,7 @@ UITextViewDelegate{
         let normalCellHeight = CGFloat(44)
         let mediumCellHeight = CGFloat(150)
         let largeCellHeight = CGFloat(200)
-
+        
         
         switch (indexPath) {
         case [0,1]: //Category-Picker cell
@@ -184,19 +284,21 @@ UITextViewDelegate{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath {
-        case [0,1]:
-            isCategoryPickerHidden = !isCategoryPickerHidden
-            categorySelectedLabel.textColor = isCategoryPickerHidden ? .black : tableView.tintColor
-            tableView.beginUpdates()
-            tableView.endUpdates()
-        case [0,2]:
-            isDatePickerHidden = !isDatePickerHidden
-            dateSelectedLabel.textColor = isDatePickerHidden ? .black : tableView.tintColor
-            tableView.beginUpdates()
-            tableView.endUpdates()
-        default:
-            break
+        if editingEnabled {
+            switch indexPath {
+            case [0,1]:
+                isCategoryPickerHidden = !isCategoryPickerHidden
+                categorySelectedLabel.textColor = isCategoryPickerHidden ? .black : tableView.tintColor
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            case [0,2]:
+                isDatePickerHidden = !isDatePickerHidden
+                dateSelectedLabel.textColor = isDatePickerHidden ? .black : tableView.tintColor
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            default:
+                break
+            }
         }
     }
     
